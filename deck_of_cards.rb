@@ -1,4 +1,6 @@
 class Card
+  attr_reader :face, :suit
+
   def initialize(face, suit)
     @face = face
     @suit = suit
@@ -13,8 +15,8 @@ class Deck
   def initialize()
     @cards = []
     @discarded = []
-    faces = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-    suits = ['C', 'D', 'H', 'S']
+    faces = %w(2 3 4 5 6 7 8 9 10 J Q K A)
+    suits = %w(C D H S)
     faces.each do |face|
       suits.each do |suit|
         @cards.push(Card.new(face, suit))
